@@ -155,6 +155,7 @@ MonoBehaviour:
   - {fileID: 6079422528850734822, guid: 59bfded4894fb4c5c8eacbd4a8719b22, type: 3}
   - {fileID: 1316872040662103448, guid: 01037e19c31fb4e5487e80602e373075, type: 3}
   cameraMovement: {fileID: 519420030}
+  map: {fileID: 1465499839}
   Coin1Prefab: {fileID: 1621579494474214257, guid: 835320fe8100b4714b8bfbf265c8d924,
     type: 3}
   Coin2Prefab: {fileID: 1621579494474214257, guid: 835320fe8100b4714b8bfbf265c8d924,
@@ -299,4 +300,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2019578338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2019578340}
+  - component: {fileID: 2019578339}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2019578339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019578338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a737b0496604b461faf100f2ccd767f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 3385519567318659696, guid: d09f65b3d00444a2e822d26b25bd092b,
+    type: 3}
+--- !u!4 &2019578340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019578338}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3288562, y: -4.929658, z: -166.0514}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
