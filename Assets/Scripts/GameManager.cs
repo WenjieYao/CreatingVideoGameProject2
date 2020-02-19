@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
+    int DM0 = 8;
+    int AM0 = 8;
     //[SerializeField]
     public PanelBtn ClickBtn { get; set; }
 
@@ -47,8 +49,8 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-        pDMoney = 7;
-        pAMoney = 7;
+        pDMoney = DM0;
+        pAMoney = AM0;
     }
 
     // Update is called once per frame
@@ -75,6 +77,17 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public void FinishRound(FinishBtn finishBtn)
+    {
+        if (finishBtn.IsDefender)
+        {
+            pDMoney = DM0;
+        }
+        else
+        {
+            pAMoney = AM0;
+        }
+    }
     public void MoneyCost()
     {
         if (ClickBtn.IsDefender)
@@ -96,6 +109,19 @@ public class GameManager : Singleton<GameManager>
         
     }
 
+    public void MoveCost(bool isd)
+    {
+        if(isd)
+        {
+            pDMoney -= 1;
+            Hover.Instance.Deactivate();
+        }
+        else
+        {
+            pAMoney -= 1;
+            Hover.Instance.Deactivate();
+        }
+    }
     private void HandleEscape()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

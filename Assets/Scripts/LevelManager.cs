@@ -41,7 +41,9 @@ public class LevelManager : Singleton<LevelManager>
        
     }
 
-
+    public static Point CenterPos = new Point(0,0);
+    public static int InnerX = 7;
+    public static int InnerY = 7;
     private void CreateLevel()
     {
         Tiles = new Dictionary<Point, TileScript>();
@@ -50,6 +52,8 @@ public class LevelManager : Singleton<LevelManager>
         string[] mapData = ReadLevelText();
         int mapXSize = mapData[0].ToCharArray().Length;
         int mapYSize = mapData.Length;
+        CenterPos.X = (mapXSize-1)/2;
+        CenterPos.Y = (mapYSize-1)/2;
 
         Vector3 maxTile = Vector3.zero;
 
@@ -95,7 +99,7 @@ public class LevelManager : Singleton<LevelManager>
 
     private void SpawnPortal()
 	{
-        CoinSpawn = new Point(7, 7);
+        CoinSpawn = CenterPos;
 
         Instantiate(CoinPrefab, Tiles[CoinSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
 
