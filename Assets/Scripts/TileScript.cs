@@ -141,7 +141,7 @@ public class TileScript : Singleton<TileScript>
     }
     private void PlaceTower()
 	{
-        GameObject tower = (GameObject)Instantiate(GameManager.Instance.ClickBtn.SpawnPrefab, transform.position, Quaternion.identity);
+        GameObject tower = (GameObject)Instantiate(PrefabList.Instance.PfList[GameManager.Instance.ClickBtn.SpawnPrefab], transform.position, Quaternion.identity);
         tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y+1;
         tower.transform.SetParent(transform);
 

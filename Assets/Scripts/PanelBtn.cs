@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PanelBtn : MonoBehaviour
 {
     [SerializeField]
-    private GameObject spawnPrefab = null;
+    private int spawnPrefab = 0;
 
     [SerializeField]
     private Sprite nsprite = null;
@@ -40,13 +40,29 @@ public class PanelBtn : MonoBehaviour
     }
     [SerializeField]
     private Text priceTxt = null;
-    public GameObject SpawnPrefab
+    public int SpawnPrefab
     {
         get
         {
             return spawnPrefab;
         }
     }
+
+    [SerializeField]
+    private int numLeft = 0;
+    public int NumLeft 
+    {
+        get
+        {
+            return numLeft;
+        }
+        set
+        {
+            this.numLeft = value;
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {

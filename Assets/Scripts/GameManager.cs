@@ -63,14 +63,14 @@ public class GameManager : Singleton<GameManager>
     {
         if (spawnBtn.IsDefender)
         {
-            if (pDMoney >= spawnBtn.Price){
+            if (pDMoney >= spawnBtn.Price && spawnBtn.NumLeft>0){
                 this.ClickBtn = spawnBtn;
                 Hover.Instance.Activate(spawnBtn.Nsprite);
             }
         }
         else
         {
-            if (pAMoney >= spawnBtn.Price){
+            if (pAMoney >= spawnBtn.Price && spawnBtn.NumLeft>0){
                 this.ClickBtn = spawnBtn;
                 Hover.Instance.Activate(spawnBtn.Nsprite);
             }
@@ -92,17 +92,19 @@ public class GameManager : Singleton<GameManager>
     {
         if (ClickBtn.IsDefender)
         {
-            if (pDMoney >= ClickBtn.Price)
+            if (pDMoney >= ClickBtn.Price && ClickBtn.NumLeft>0)
             {
                 pDMoney -= ClickBtn.Price;
+                ClickBtn.NumLeft -= 1;
                 Hover.Instance.Deactivate();
             }
         }
         else
         {
-            if (pAMoney >= ClickBtn.Price)
+            if (pAMoney >= ClickBtn.Price && ClickBtn.NumLeft>0)
             {
                 pAMoney -= ClickBtn.Price;
+                ClickBtn.NumLeft -= 1;
                 Hover.Instance.Deactivate();
             }
         }
