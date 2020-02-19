@@ -14,13 +14,10 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField]
     private Transform map = null;
 
-    private Point CoinSpawn1, CoinSpawn2;
+    private Point CoinSpawn;
 
     [SerializeField]
-    private GameObject Coin1Prefab = null;
-
-    [SerializeField]
-    private GameObject Coin2Prefab = null;
+    private GameObject CoinPrefab = null;
 
 
     public Dictionary<Point, TileScript> Tiles { get; set; }
@@ -30,6 +27,8 @@ public class LevelManager : Singleton<LevelManager>
     {
         get { return tilePrefabs[0].GetComponent<SpriteRenderer>().sprite.bounds.size.x; }
     }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,7 +53,7 @@ public class LevelManager : Singleton<LevelManager>
 
         Vector3 maxTile = Vector3.zero;
 
-        Vector3 worldStart = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height));
+        Vector3 worldStart = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/32*7, Screen.height));
         for (int y =0 ; y < mapYSize; y++)
         {
             char[] newTiles = mapData[y].ToCharArray();
@@ -96,12 +95,12 @@ public class LevelManager : Singleton<LevelManager>
 
     private void SpawnPortal()
 	{
-        CoinSpawn1 = new Point(7, 7);
+        CoinSpawn = new Point(7, 7);
 
-        Instantiate(Coin1Prefab, Tiles[CoinSpawn1].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
+        Instantiate(CoinPrefab, Tiles[CoinSpawn].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
 
-        CoinSpawn2 = new Point(0, 0);
+        //CoinSpawn2 = new Point(0, 0);
 
-        Instantiate(Coin2Prefab, Tiles[CoinSpawn2].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
+        //Instantiate(Coin2Prefab, Tiles[CoinSpawn2].GetComponent<TileScript>().WorldPosition, Quaternion.identity);
     }
 }
