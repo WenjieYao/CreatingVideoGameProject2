@@ -114,7 +114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf22184d4b5842b9bc28c9a8e965401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabType: 3
-  nsprite: {fileID: 21300000, guid: 48cd642827f9e423b9f7c2a0b471a539, type: 3}
+  health: 3
+  attackPower: 1
+  attackRange: 1
   movement: 2
   isDefender: 0
+  prefabType: 3
+  nsprite: {fileID: 21300000, guid: 48cd642827f9e423b9f7c2a0b471a539, type: 3}

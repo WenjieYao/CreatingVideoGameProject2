@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/******************************************************/
+/**Camera Control Scprit, not used in current Project**/
+/******************************************************/
+
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField]

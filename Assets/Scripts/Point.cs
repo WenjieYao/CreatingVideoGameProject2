@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+
+/******************************************************/
+/*********************   Point Class  *****************/
+/******************************************************/
+
 public struct Point
 {
+    // A vector contains X and Y position
     public int X { get; set; }
 
     public int Y { get; set; }
@@ -14,6 +20,7 @@ public struct Point
         this.Y = y;
     }
 
+    // Override == operator
     public static bool operator == (Point p1, Point p2)
         {
             if ((object)p1 == null)

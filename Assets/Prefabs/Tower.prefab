@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e5599944eb1264de49e5a8d754ec0ead, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -94,5 +94,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf22184d4b5842b9bc28c9a8e965401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 3385519567318659696}
+  health: 5
+  attackPower: 1
+  attackRange: 2
+  movement: 0
+  isDefender: 1
+  prefabType: 0
   nsprite: {fileID: 21300000, guid: e07e1e3d6c6b3493e84918c56703b9f8, type: 3}
